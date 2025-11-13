@@ -4,7 +4,6 @@ body {
     color: #333;
     transition: background-color 0.3s, color 0.3s;
 }
-
 /* Стили для карточек */
 .game-card {
     transition: transform 0.2s;
@@ -42,7 +41,7 @@ body {
     flex-grow: 1;
 }
 
-/* --- Стили для Dark Mode (Бонус +3%) --- */
+/* --- Стили для Dark Mode --- */
 body.dark-mode {
     background-color: #121212;
     color: #f4f4f4;
