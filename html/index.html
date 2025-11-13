@@ -4,42 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Shop - Каталог</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Базовые стили */
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Стили для карточек */
+        .game-card {
+            transition: transform 0.2s, opacity 0.3s;
+            margin-bottom: 24px;
+        }
+        .game-card:hover {
+            transform: scale(1.03);
+        }
+        .game-card img {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        /* --- Стили для Dark Mode (Бонус +3%) --- */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f4f4f4;
+        }
+        body.dark-mode .navbar {
+            border-bottom: 1px solid #333;
+        }
+        body.dark-mode .card {
+            background-color: #1e1e1e;
+            border-color: #444;
+            color: #f4f4f4;
+        }
+        body.dark-mode .form-control {
+            background-color: #2a2a2a;
+            color: #fff;
+            border-color: #444;
+        }
+        body.dark-mode .form-control::placeholder { color: #999; }
+        body.dark-mode footer {
+            background-color: #1e1e1e !important;
+        }
+    </style>
 </head>
 <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">🎮 GameShop</a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse" id="navbarContent">
-                
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Магазин</a>
+                        <a class="nav-link active" href="#">Магазин</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Профиль</a>
+                        <a class="nav-link" href="#">Профиль</a>
                     </li>
                 </ul>
-                
                 <div class="d-flex">
-                    <a href="cart.html" class="btn btn-primary position-relative me-3">
-                        Корзина
-                        <span id="cart-counter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
-                    </a>
+                    <a href="#" class="btn btn-primary position-relative me-3">Корзина</a>
                     <button class="btn btn-outline-light" id="theme-toggle">Сменить тему</button>
                 </div>
-                
             </div>
         </div>
     </nav>
+
     <div class="container mt-4">
+        
         <div class="row mb-4">
             <div class="col-md-12">
                 <input type="text" id="search-input" class="form-control" placeholder="Поиск по названию...">
@@ -47,16 +86,134 @@
         </div>
         
         <div id="game-list" class="row">
+            
+            <div class="col-lg-4 col-md-6 game-card" data-title="cyberpunk 2077">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg" class="card-img-top" alt="Cyberpunk 2077">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Cyberpunk 2077</h5>
+                        <p class="card-text text-muted">RPG</p>
+                        <h6 class="card-subtitle mt-auto mb-2">19990 KZT</h6>
+                        <a href="#" class="btn btn-primary btn-sm">В корзину</a>
+                    </div>
+                </div>
             </div>
-    </div>
 
-    <footer class="text-center p-4 mt-5 bg-dark text-white">
+            <div class="col-lg-4 col-md-6 game-card" data-title="elden ring">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Elden_Ring_Box_art.jpg" class="card-img-top" alt="Elden Ring">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Elden Ring</h5>
+                        <p class="card-text text-muted">Action RPG</p>
+                        <h6 class="card-subtitle mt-auto mb-2">24990 KZT</h6>
+                        <a href="#" class="btn btn-primary btn-sm">В корзину</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 game-card" data-title="stray">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Stray_game_cover.jpg" class="card-img-top" alt="Stray">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Stray</h5>
+                        <p class="card-text text-muted">Adventure</p>
+                        <h6 class="card-subtitle mt-auto mb-2">12990 KZT</h6>
+                        <a href="#" class="btn btn-primary btn-sm">В корзину</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 game-card" data-title="hogwarts legacy">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Hogwarts_Legacy_cover.jpg" class="card-img-top" alt="Hogwarts Legacy">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Hogwarts Legacy</h5>
+                        <p class="card-text text-muted">Action RPG</p>
+                        <h6 class="card-subtitle mt-auto mb-2">29990 KZT</h6>
+                        <a href="#" class="btn btn-primary btn-sm">В корзину</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 game-card" data-title="red dead redemption 2">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" class="card-img-top" alt="Red Dead Redemption 2">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Red Dead Redemption 2</h5>
+                        <p class="card-text text-muted">Action-Adventure</p>
+                        <h6 class="card-subtitle mt-auto mb-2">17990 KZT</h6>
+                        <a href="#" class="btn btn-primary btn-sm">В корзину</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 game-card" data-title="the witcher 3: wild hunt">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg" class="card-img-top" alt="The Witcher 3">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">The Witcher 3: Wild Hunt</h5>
+                        <p class="card-text text-muted">Action RPG</p>
+                        <h6 class="card-subtitle mt-auto mb-2">14990 KZT</h6>
+                        <a href="#" class="btn btn-primary btn-sm">В корзину</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> </div> <footer class="text-center p-4 mt-5 bg-dark text-white">
         © 2025 GameShop
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/cart.js"></script>
-    <script src="js/main.js"></script>
+
+    <script>
+        // Ждем, пока вся страница (DOM) будет готова
+        $(document).ready(function() {
+
+            // --- Функция: Поиск / Фильтрация (Бонус +3%) ---
+            $('#search-input').on('keyup', function() {
+                var searchTerm = $(this).val().toLowerCase(); // Берем текст из инпута
+
+                // Проходимся по каждой карточке
+                $('.game-card').each(function() {
+                    // Берем title из data-атрибута (который мы вписали в HTML)
+                    var gameTitle = $(this).data('title'); 
+
+                    // Если title содержит поисковый запрос - показываем, иначе скрываем
+                    if (gameTitle.includes(searchTerm)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+            // --- Функция: Dark / Light Mode (Бонус +3%) ---
+            
+            // Функция: применить тему
+            function applyTheme(theme) {
+                if (theme === 'dark') {
+                    $('body').addClass('dark-mode');
+                } else {
+                    $('body').removeClass('dark-mode');
+                }
+            }
+
+            // 1. Проверяем localStorage при загрузке страницы
+            let currentTheme = localStorage.getItem('theme') || 'light';
+            applyTheme(currentTheme);
+
+            // 2. Вешаем обработчик на кнопку
+            $('#theme-toggle').on('click', function() {
+                // Переключаем класс
+                let theme = $('body').hasClass('dark-mode') ? 'light' : 'dark';
+                // 3. Сохраняем выбор в localStorage
+                localStorage.setItem('theme', theme);
+                applyTheme(theme);
+            });
+
+        });
+    </script>
+
 </body>
 </html>
