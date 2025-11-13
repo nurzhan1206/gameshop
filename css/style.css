@@ -124,7 +124,6 @@ button:focus, .btn:focus{ outline:3px solid rgba(91,140,255,0.18); }
   .game-card img{ height:180px; }
 }
 
-
 /* --- Стили для Dark Mode (Бонус +3%) --- */
 body.dark-mode{
     background-color: #121212;
