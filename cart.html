@@ -12,30 +12,41 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">🎮 GameShop</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Магазин</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html">Профиль</a></li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Магазин</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Профиль</a>
+                    </li>
                 </ul>
-                <a href="cart.html" class="btn btn-primary position-relative me-3 active">
-                    Корзина
-                    <span id="cart-counter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
-                </a>
-                <button class="btn btn-outline-light" id="theme-toggle">Сменить тему</button>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-primary position-relative me-3 active">
+                        Корзина
+                        <span id="cart-counter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
+                    </a>
+                    <button class="btn btn-outline-light" id="theme-toggle">Сменить тему</button>
+                </div>
             </div>
         </div>
     </nav>
-
     <div class="container mt-5">
-        <h2>Ваша корзина</h2>
+        <h2> Ваша корзина</h2>
         <div id="cart-items" class="mt-4">
             </div>
         
+
+
         <h3 class="mt-4 text-end">Итого: <span id="cart-total">0</span> KZT</h3>
         <button class="btn btn-success btn-lg float-end">Оформить заказ</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/cart-page.js"></script>
 </body>
